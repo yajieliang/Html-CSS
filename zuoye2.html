@@ -36,35 +36,39 @@
     <fieldset style="width: 660px;height: 290px;">
         <legend style="color: red;"><h1>网页换肤</h1></legend>
         <ul id="skin">
-            <li class="skin_0" id="selected" title="灰色" style="background-color: grey;"></li>
-            <li class="skin_1" title="紫色" style="background-color:rgba(88, 45, 131, 0.685);"></li>
-            <li class="skin_2" title="红色" style="background-color:rgba(216, 112, 147, 0.87);"></li>
-            <li class="skin_3" title="天蓝色" style="background-color:rgb(65, 174, 225);"></li>
-            <li class="skin_4" title="橙色" style="background-color:rgba(255, 230, 0, 0.836);"></li>
-            <li class="skin_5" title="淡绿色" style="background-color:rgb(152, 251, 169);"></li>
+            <li id="skin_0" title="灰色"style="background-color: grey;"></li>
+            <li id="skin_1" title="紫色" style="background-color:rgba(88, 45, 131, 0.685);"></li>
+            <li id="skin_2" title="红色" style="background-color:rgba(216, 112, 147, 0.87);"></li>
+            <li id="skin_3" title="天蓝色" style="background-color:rgb(65, 174, 225);"></li>
+            <li id="skin_4" title="橙色" style="background-color:rgba(255, 230, 0, 0.836);"></li>
+            <li id="skin_5" title="淡绿色" style="background-color:rgb(152, 251, 169);"></li>
         </ul>
 
-        <div id="box" class="skin_0">
+        <div id="box" id="skin_0">
             LocalStorage将数据保存在客户端本地的硬件设备中，即使浏览器被关闭了，该数据仍然存在，下次打开浏览器访问网站时仍然可以继续使用。
         </div>
     </fieldset>
-    <script>    
-        var skin = document.getElementById("skin");
+    <script> 
         var box = document.getElementById("box");
-        box.style.backgroundColor = "grey";
-        var liList = document.getElementsByTagName("li");
-        for(var i = 0; i< liList.length;i++){
-            liList[i].onclick = function(){
-                for(j=0;j<liList.length;j++){
-                    liList[j].setAttribute("id","");
+        for (var i = 0; i < 6; i++) {
+            var liList = document.getElementsByTagName("li");
+            liList[i].onclick = function() {
+                box.style.backgroundColor = this.style.backgroundColor;
+                localStorage.setItem("skin",this.style.backgroundColor);
+                for (var j = 0; j < 6; j++) {
+                    liList[j].style.marginTop = "15px";
                 }
-                this.setAttribute("id","selected");
-                var cl = document.getElementById("selected").style;
-                console.log(cl.backgroundColor);
-                var time = new Date().getTime();
-                localStorage.setItem(time, cl.backgroundColor);
-                box.style.backgroundColor = localStorage.getItem(time);
+                this.style.marginTop = "5px";
+                localStorage.setItem("di",this.id);
             }
+        }
+        if (localStorage.skin && localStorage.di) {
+            box.style.backgroundColor = localStorage.skin;
+            var bg = localStorage.getItem("di");
+            document.getElementById(bg).style.marginTop = "5px";
+        } else {
+            box.style.backgroundColor = "gray";
+            document.getElementById("skin_0").style.marginTop = "5px";
         }
         
     </script>
