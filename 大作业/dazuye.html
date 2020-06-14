@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="yinghuayiyou.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        li {
+            list-style-type: none;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        #one {
+            color: black;
+            font-size: 18px;
+            font-weight: bolder;
+            font-family: "宋体";
+            width: 110px;
+        }
+        
+        .nav-btn1 {
+            margin-top: 20px;
+            border: none;
+        }
+        
+        .nav-btn2 {
+            width: 155px;
+            height: 50px;
+            color: white;
+            font-size: 25px;
+            font-weight: lighter;
+            margin-right: 40px;
+            margin-top: 13px;
+            background-color: #e8420a;
+            border-radius: 10%;
+        }
+        
+        @media screen and (min-width:770px) {
+            #head {
+                display: block;
+            }
+            header {
+                height: 125px;
+            }
+            .navbar-header img {
+                margin-top: 10px;
+                margin-left: 100px;
+            }
+            #one:hover {
+                color: red;
+                border-bottom: 2px solid red;
+            }
+            .lunbo {
+                height: 450px;
+                margin-top: 125px;
+            }
+            .lunbo-lb {
+                display: block;
+            }
+            .chage-lunbo1 {
+                display: none;
+            }
+            .lunbo-search {
+                bottom: 70px;
+                left: 420px;
+            }
+            #sbanner {
+                display: block;
+            }
+            #chage-sbanner {
+                display: none;
+            }
+            #routes {
+                display: block;
+            }
+            #chage-routes {
+                display: none;
+            }
+            .Bbanner {
+                display: block;
+            }
+            #hope {
+                display: block;
+            }
+            #chage-hope {
+                display: none;
+            }
+            #footer {
+                display: block;
+            }
+            #chage-footer {
+                display: none;
+            }
+            .hope-bagd {
+                height: 1495px;
+                background-color: transparent;
+            }
+            footer {
+                height: 530px;
+            }
+        }
+        
+        @media screen and (max-width:769px) {
+            #head {
+                display: none;
+            }
+            header {
+                height: 80px;
+            }
+            .navbar-header img {
+                margin-top: 10px;
+                margin-left: 50px;
+            }
+            .lunbo {
+                height: 250px;
+                margin-top: 80px;
+            }
+            .left {
+                display: none;
+            }
+            .right {
+                display: none;
+            }
+            .lunbo-lb {
+                display: none;
+            }
+            .chage-lunbo1 {
+                display: block;
+            }
+            .lunbo-search {
+                top: 180px;
+                left: 40px;
+            }
+            #sbanner {
+                display: none;
+            }
+            #chage-sbanner {
+                display: block;
+            }
+            #routes {
+                display: none;
+            }
+            #chage-routes {
+                display: block;
+            }
+            .Bbanner {
+                display: none;
+            }
+            #hope {
+                display: none;
+            }
+            #chage-hope {
+                display: block;
+            }
+            #footer {
+                display: none;
+            }
+            #chage-footer {
+                display: block;
+            }
+            .hope-bagd {
+                background-color: white;
+                margin-top: 20px;
+                height: 1830px;
+            }
+            footer {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar-fixed-top">
+        <div id="container-fluid">
+            <div class="row" style="height: 45px;background-color: black;" id="head">
+                <div class="col-sm-4 col-sm-offset-2"></div>
+                <div class="col-sm-6">
+                    <div class="row">
+                        <div class="col-xs-6 col-md-push-3" style="line-height: 45px;">
+                            <img src="img/tell.png" />
+                            <span style="color: white;font-size: large;">&nbsp; 400-808-8682</span>
+                        </div>
+                        <div class="col-xs-4 col-md-push-1" style="line-height: 40px;line-height: 45px;">
+                            <a href="#" style="color: white;">请登录</a>
+                            <span style="color: white;">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a href="#" style="color: white;">注册</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="navbar navbar-default" style="height: 80px;border: none;">
+                <div class="navbar-header" style="height: 80px;">
+                    <button type="button" class="navbar-toggle nav-btn1" data-toggle="collapse" data-target="#col_1">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <img src="img/logo.png" alt="英华逸游" />
+                    <button type="button" class="navbar-toggle nav-btn2">快速定制</button>
+                </div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-2"></div>
+                        <div class="collapse navbar-collapse" id="col_1">
+                            <ul class="nav navbar-nav list-inline col-sm-7 col-md-pull-1">
+                                <li class="col-sm-2"><a href="#generic" class="h5" id="one">首页</a></li>
+                                <li class="col-sm-3"><a href="#sbanner" class="h5" id="one">热门线路</a></li>
+                                <li class="col-sm-3"><a href="#visa" class="h5" id="one"> 签证推荐</a></li>
+                                <li class="col-sm-3"><a href="#hope" class="h5" id="one">使命愿景</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div id="generic" class="carousel slide lunbo" data-ride="carousel" data-interval="2000">
+        <div class="carousel-inner">
+            <div class="item active">
+                <img alt="First slide" src="img/banner.jpg" class="item-img" style="height: 450px;">
+                <div class="carousel-caption lunbo-lb lunbo-lb1">
+                    <h1>悠游古欧洲 遍览德法瑞意</h1>
+                    <p>巴黎卢浮宫、塞纳河游船、凡尔赛宫</p>
+                    <p>少女峰、大运河游船、金色列车、西庸城堡</p>
+                </div>
+                <div class="carousel-caption chage-lunbo1">
+                    <h1>悠游古欧洲 遍览德法瑞意</h1>
+                    <p>全程省级热早+1晚5星酒店</p>
+                </div>
+                <div class="lunbo-search">
+                    <div class="btn-group lunbo-btn">
+                        <button type="button" class="btn">
+                            <img src="img/position.png" alt="">
+                            <p>目的地</p>
+                        </button>
+                        <button type="button" class="btn">
+                            <input type="text" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;日本&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 美国&nbsp;&nbsp;&nbsp;&nbsp; 英国&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 地中海"/>
+                        </button>
+                        <button type="button" class="btn">
+                            <img src="img/search.png" alt="">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="sbanner">
+        <img src="img/Sbanner2.jpg" alt="">
+        <div class="sbanner-word" style="color: white;">
+            <h2>机场接送 省钱省心</h2>
+            <p>提供上海、苏州、无锡各市</p>
+            <p>往返机场，码头接送服务，更有包车服务</p>
+        </div>
+        <div class="sbanner-div">
+            <img src="img/car.png" alt="">
+            <p>车辆接送</p>
+            <button>查看详情</button>
+        </div>
+    </div>
+    <div id="chage-sbanner">
+        <img src="img/carH.png" alt="">
+        <div>
+            <h3>机场接送 省钱省心</h3>
+            <p>提供上海、苏州、无锡各市</p>
+            <p>往返机场，码头接送服务，更有包车服务</p>
+        </div>
+        <button>查看详情</button>
+    </div>
+    <div id="routes">
+        <div class="routes-top">
+            <p>热 门 线 路</p>
+            <p>Popular tourist routes</p>
+        </div>
+        <div class="routes-div">
+            <div class="routes-div1">
+                <img src="img/hot1.jpg" alt="">
+                <div class="routes-box routes-box1">
+                    <p>海南三亚5天4晚，纯玩、4晚红树林度假王国</p>
+                    <p>￥<span>2580</span>/人起</p>
+                </div>
+            </div>
+            <div class="routes-div2">
+                <img src="img/hot3.jpg" alt="">
+                <div class="routes-box routes-ab1">
+                    <p>曼谷+芭提雅 国际五星，赠送2220大礼包，绝无自费</p>
+                    <p>￥<span>2790</span>/人起</p>
+                </div>
+            </div>
+            <div class="routes-div3">
+                <img src="img/hot4.jpg" alt="">
+                <div class="routes-box routes-ab2">
+                    <p>日本本州游 樱花、寿司、温泉、美食</p>
+                    <p>￥<span>5399</span>/人起</p>
+                </div>
+            </div>
+            <div class="routes-div4">
+                <img src="img/hot2.jpg" alt="">
+                <div class="routes-box routes-box2">
+                    <p>德法意瑞欧洲4国，ABCD任意路线由您挑选</p>
+                    <p>￥<span>7999</span>/人起</p>
+                </div>
+            </div>
+            <div class="routes-div5">
+                <img src="img/hot5.jpg" alt="">
+                <div class="routes-box routes-ab3">
+                    <p>斯里兰卡7天6晚全景游 保证入住2晚香格里拉</p>
+                    <p>￥<span>7999</span>/人起</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="chage-routes">
+        <div class="chage-routes-div">
+            <div>
+                <p>热门线路</p>
+                <hr>
+            </div>
+            <div class="chage-routes-div1">
+                <img src="img/hot1.jpg" alt="">
+                <div>
+                    <p>海南三亚5天4晚<br/>纯玩、4晚红树林度假王国</p>
+                    <p>￥<span>2580</span>/人起</p>
+                </div>
+            </div>
+            <div class="chage-routes-div1">
+                <img src="img/hot2.jpg" alt="">
+                <div>
+                    <p>德法意瑞欧洲4国<br/>ABCD任意路线由您挑选</p>
+                    <p>￥<span>7999</span>/人起</p>
+                </div>
+            </div>
+            <button>查看更多 &gt;</button>
+        </div>
+    </div>
+    <div class="hope-bagd">
+        <div id="hope">
+            <div class="hope-top">
+                <p>使命与愿景</p>
+                <p>让旅游回归本质，体验纯粹旅游</p>
+            </div>
+            <div class="hope-div">
+                <div class="hope-div1">
+                    <img src="img/mission1.jpg" alt="">
+                    <div style="background-color:#0a2664">
+                        <p>服务理念及优势</p>
+                        <p>“英华逸游”通过重新打造旅游全程中的产品线路设计、出行交通方案、陪游向导服务、增值关怀项目等，为客户提供高品质的旅游体验。英华逸游在泰国、欧洲、等多个国家拥有丰富的旅游资源，同时致力于给用户提供性价比高的产品和服务。</p>
+                    </div>
+                </div>
+                <div class="hope-div2">
+                    <img src="img/mission2.jpg" alt="">
+                </div>
+                <div class="hope-div3">
+                    <div class="hop-pz hop-pz1">
+                        <img src="img/rorate.png" alt="">
+                        <img src="img/icon1.png" alt="">
+                        <p>品质行程</p>
+                        <p>旅游达人精心设计、基于口碑反复打磨，<br/>全网最好，敢跟任何产品比</p>
+                    </div>
+                    <div class="hop-pz hop-pz2">
+                        <img src="img/rorate.png" alt="">
+                        <img src="img/icon2.png" alt="">
+                        <p>品质消费</p>
+                        <p>不推自费，<br/>不进垃圾购物店和伪景点</p>
+                    </div>
+                    <div class="hop-pz hop-pz3">
+                        <img src="img/rorate.png" alt="">
+                        <img src="img/icon3.png" alt="">
+                        <p>品质小团</p>
+                        <p>独立成团不散拼，<br/>只跟亲朋好友一起玩，每天发团</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="chage-hope">
+            <div>
+                <p>使命与愿景：<span>让旅游回归本质，体验纯粹旅游</span></p>
+                <hr>
+            </div>
+            <div class="chage-hope-div">
+                <img src="img/mission1.jpg" alt="" class="chage-hope-img">
+                <p class="chage-hope-p1">--服务理念--</p>
+                <p class=" text-left chage-hope-p2">&nbsp;&nbsp;“英华逸游”通过重新打造旅游全程中的产品线路设计、出行交通方案、陪游向导服务、增值关怀项目等，为客户提供高品质的旅游体验。英华逸游在泰国、欧洲、等多个国家拥有丰富的旅游资源，同时致力于给用户提供性价比高的产品和服务。</p>
+                <img src="img/mission2.jpg" alt="" class="chage-hope-img">
+                <p class="chage-hope-p1">--服务优势--</p>
+                <div class="chage-hope-div1">
+                    <img src="img/icon11.png" alt="">
+                    <p>旅游达人精心设计、基于口碑反复打磨，<br/>告别人山人海鸡肋景点<br/>全网最好，敢跟任何产品比</p>
+                </div>
+                <div class="chage-hope-div2">
+                    <img src="img/icon22.png" alt="">
+                    <p>不推自费，<br/>不进垃圾购物店和伪景点</p>
+                </div>
+                <div class="chage-hope-div3">
+                    <img src="img/icon33.png" alt="">
+                    <p>独立成团不散拼，<br/>只跟亲朋好友一起玩，每天发团</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div id="footer">
+            <div class="footer-div1">
+                <p>合作伙伴</p>
+                <p>
+                    <img src="img/xiecheng.png" style="margin-left: 4px;" alt="">
+                    <img src="img/feizhu.png" style="margin-left: 14px;" alt="">
+                    <img src="img/quna.png" style="margin-left: 14px;" alt="">
+                    <img src="img/suzhou.png" style="margin-left: 13px;" alt="">
+                    <p><span>携程网</span><span>阿里飞猪</span><span>去哪儿</span><span>苏州旅游局</span></p>
+                </p>
+            </div>
+            <div class="footer-div2">
+                <p>热门位置</p>
+                <p class="text-left">韩国 日本 菲律宾 越南 老挝 柬埔寨 泰国 马来西亚 新加坡 印度尼西亚 印度 斯里兰卡 土耳其 阿联酋 西班牙 意大利 希腊 法国 比利时 荷兰 英国 瑞士 奥地利 德国匈 牙利 俄罗斯 捷克 芬兰 葡萄牙 冰岛 美国 加拿大 巴西 阿根廷 澳大利亚 新西兰</p>
+            </div>
+            <div class="footer-div3">
+                <p>主题服务</p>
+                <p>海岛度假 历史文化 探索冒险 美食购物 都市生活 海外游学 邮轮度假 蜜月摄影 亲子 乐园</p>
+            </div>
+            <div class="footer-div4">
+                <p>友情链接</p>
+                <p>马蜂窝 穷游 booking 苏州旅游局 驴友网 吾爱全球签证中心 酒店团购 携程旅游攻略 天巡职航在线 满天飞旅游网 中国旅游网 澳乐网 背包兔旅游行程 出境旅游 国际酒店 州旅行社 出境旅游 517旅行 花生游 家园网 海外婚礼</p>
+            </div>
+            <div class="footer-div5">
+                <p>2020 @苏州英华国际旅游有限公司 版权所有</p>
+            </div>
+        </div>
+        <div id="chage-footer">
+            <p>苏ICP备号、2020<br/>@苏州英华国际旅游有限公司 版权所有<br/>技术支持 杭州科技</p>
+        </div>
+    </footer>
+</body>
+
+</html>
