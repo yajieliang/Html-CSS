@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        div {
+            width: 400px;
+            height: 100px;
+            font-size: 50px;
+            text-align: center;
+            line-height: 100px;
+            position: absolute;
+            top: 45px;
+        }
+        
+        canvas {
+            border: 3px solid rgb(10, 184, 244);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="text"></div>
+    <canvas id="canvas" width="400" height="180"></canvas>
+</body>
+<script>
+    var text = document.getElementById("text");
+    var option = ["一等奖", "二等奖", "三等奖", "谢谢惠顾"];
+    text.innerHTML = option[Math.floor(Math.random() * 4)];
+    var canvas = document.getElementById("canvas");
+    var context = canvas.getContext("2d");
+
+    // context.font = "italic 35px 隶书";
+    // context.fillStyle = "hotpink";
+    // context.fillText(option[Math.floor(Math.random() * 4)], 30, 50, 200);
+
+    context.beginPath();
+    // context.globalCompositeOperation = "source-over";
+    context.fillStyle = "gray";
+    context.rect(0, 0, 400, 180);
+    context.fill();
+    context.closePath();
+
+
+    context.beginPath();
+    context.globalCompositeOperation = "destination-out";
+    // context.fillStyle = "green";
+    // context.arc(50, 50, 30, 0, 2 * Math.PI);
+    // context.fill();
+    context.closePath();
+
+    canvas.onmousedown = function(e) {
+        document.onmousemove = function(e) {
+            var e = e || window.event;
+            var x = e.clientX - canvas.offsetLeft;
+            var y = e.clientY - canvas.offsetTop;
+            context.moveTo(x, y);
+            context.arc(50, 50, 30, 0, 2 * Math.PI, true);
+            context.fill();
+
+            var mydata = context.getImageData(0, 0, context.width, context.height);
+            var data = mydata.data;
+            var count = 0;
+            for (var i = 0; i < data.length; i += 4) {
+                var a = data[i + 3];
+                if (a == 0) {
+                    count++;
+                }
+                if (count >= data.length / 4 * 0.6) {
+                    context.clearRect(0, 0, canvas.width, canvas.height);
+                }
+            }
+        }
+    }
+</script> -->
+
+    <style>
+        body {
+            height: 1000px;
+        }
+        
+        canvas {
+            border: 3px solid rgb(10, 184, 244);
+        }
+    </style>
+</head>
+<title></title>
+
+<style>
+    body {
+        height: 1000px;
+    }
+    
+    #text {
+        width: 600px;
+        height: 300px;
+        font-size: 70px;
+        text-align: center;
+        line-height: 500px;
+        position: absolute;
+        top: 55px;
+        left: 340px;
+    }
+</style>
+
+</head>
+
+<body>
+    <div style="position: relative; width: 300px; height: 100px;">
+        <div id="text"></div>
+        <canvas id="rect" width="300" height="100" style="position:absolute;left:0;top:0;"></canvas>
+        <canvas id="arc" width="300" height="100" style="position:absolute;left:0;top:0;"></canvas>
+    </div>
+
+    <script type="text/javascript">
+        // var text = document.getElementById("text");
+        var option = ["一等奖", "二等奖", "三等奖", "谢谢惠顾"];
+
+        function Refelt(rect, arc) {
+            var canvas = document.getElementById(rect);
+            var context = canvas.getContext("2d");
+
+            context.font = "solid 80px 宋体";
+            context.fillStyle = "red";
+            context.fillText(option[Math.floor(Math.random() * 4)], 30, 50, 200);
+
+            var canvas2 = document.getElementById(arc);
+            var context2 = canvas2.getContext("2d");
+            context2.fillStyle = "#ccc";
+            context2.fillRect(0, 0, 300, 100);
+            context2.fill();
+            context2.globalCompositeOperation = "destination-out";
+            var isMousedown = false;
+            canvas2.addEventListener("mousedown", function(e) {
+                isMousedown = true;
+                var docEle = document.documentElement;
+                var x = (e.clientX) + docEle.scrollLeft - docEle.clientLeft;
+                var y = (e.clientY) + docEle.scrollTop - docEle.clientTop;
+                context2.fillStyle = "#fff";
+                context2.beginPath();
+                context2.arc(x, y, 30, 0, Math.PI * 2, true);
+                context2.closePath();
+                context2.fill();
+                canvas2.addEventListener("mousemove", function(e) {
+                    if (!isMousedown) return false;
+                    var docEle = document.documentElement;
+                    var x = (e.clientX) + docEle.scrollLeft - docEle.clientLeft;
+                    var y = (e.clientY) + docEle.scrollTop - docEle.clientTop;
+                    var radgrad = context2.createRadialGradient(x, y, 0, x, y, 30);
+                    radgrad.addColorStop(0, 'rgba(0,0,0,0.6)');
+                    radgrad.addColorStop(1, 'rgba(255,255,255,0)');
+                    context2.fillStyle = radgrad;
+                    context2.beginPath();
+                    context2.arc(x, y, 30, 0, Math.PI * 2, true);
+                    context2.closePath();
+                    context2.fill();
+                }, false);
+                canvas2.addEventListener("mouseup", function(e) {
+                    isMousedown = false;
+                }, false);
+            }, false);
+            var mydata = context.getImageData(0, 0, 300, 100);
+            var data = mydata.data;
+            var count = 0;
+            for (var i = 0; i < data.length; i += 4) {
+                var a = data[i + 3];
+                if (a == 0) {
+                    count++;
+                }
+                if (count >= data.length / 4 * 0.6) {
+                    context.clearRect(0, 0, 300, 100);
+                }
+            }
+
+        }
+        Refelt("rect", "arc");
+    </script>
+</body>
+
+</html>

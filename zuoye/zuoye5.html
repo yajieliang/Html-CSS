@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css" media="screen">
+        div {
+            width: 100px;
+            height: 30px;
+            border: solid 2px orange;
+            text-align: center;
+        }
+        /*6.匹配元素类型为li且是父元素ul的倒数第2个子元素，使用HSL颜色值将背景色设置为绿色*/
+        
+        li:nth-last-child(2) {
+            background-color: hsl(120, 50%, 50%);
+        }
+        /*7.匹配元素类型为li且是父元素ul的第1个子元素，设置其文字带有红色霓虹灯效果的阴影*/
+        
+        li:first-child {
+            text-shadow: 0px 0px 3px red;
+        }
+        /*8.匹配列表项偶数行，将其背景色设置为浅灰色*/
+        
+        li:nth-child(even) {
+            background-color: rgb(201, 198, 198);
+        }
+        /*9.选择没有子元素或文本内容为空的所有元素，将其背景色设置为黄色*/
+        
+         :empty {
+            background-color: yellow;
+        }
+        /*10.匹配父元素的最后一个子元素div，将其设置半径为10px的圆角边框*/
+        
+        div:last-child {
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>哈哈</li>
+        <li>哈哈</li>
+        <li>哈哈</li>
+        <li>哈哈</li>
+        <li>哈哈</li>
+        <li>哈哈</li>
+        <li></li>
+    </ul>
+    <div></div>
+    <br/>
+    <div>CSS3</div>
+</body>
+
+</html>
